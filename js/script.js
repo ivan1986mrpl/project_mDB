@@ -24,39 +24,27 @@ const movieDB = {
     ]
 };
 
+const adv = document.querySelectorAll('.promo__adv img'),//(получаем все картинки рекламных блоков)
+      poster = document.querySelector('.promo__bg'),//(получаем блок с задним фоном)
+      genre = poster.querySelector('.promo__genre'),//(получаем блок с комедией)
+      movieList = document.querySelector('.promo__interactive-list');//(получаем блок-список фильмов)
 
-
-
-
-
-/* 'use strict';
-
-const movieDB = {
-    movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
-};
-
-const adv = document.querySelectorAll('.promo__adv img'),
-      poster = document.querySelector('.promo__bg'),
-      genre = poster.querySelector('.promo__genre'),
-      movieList = document.querySelector('.promo__interactive-list');
-
-adv.forEach(item => {
+adv.forEach(item => { //(удаляем все картинки рекламных блоков. это первый способ)
     item.remove();
 });
+// adv.forEach(function(item) { //(удаляем все картинки рекламных блоков. это второй способ с безымянной функцией)
+//     item.remove();
+// });
 
-genre.textContent = 'драма';
+genre.textContent = 'драма';//(изменяем комедия на драма)
 
-poster.style.backgroundImage = 'url("img/bg.jpg")';
+poster.style.backgroundImage = 'url("img/bg.jpg")';//(меняем фото на другое, указываем путь относительно html, прописываем url используя разные кавычки в комбинировании)
 
-movieList.innerHTML = "";
+movieList.innerHTML = '';//(очищяем список фильмов, записываем туда просто ничего, пустую строку. Чтобы это работало, надо использовать для получения этого списка querySelector, а не querySelectorAll. в querySelectorAll список поместится в псевдо массив, у которого нет своих методов и innerHTML не сработает)
 
-movieDB.movies.sort();
+movieDB.movies.sort();//(сортировка названий фильма по алфавиту)
+
+// console.log(poster.innerHTML);//(так можно получить значение этого свойства)
 
 movieDB.movies.forEach((film, i) => {
     movieList.innerHTML += `
@@ -64,4 +52,4 @@ movieDB.movies.forEach((film, i) => {
             <div class="delete"></div>
         </li>
     `;
-}); */
+}); //(+= дополнительное присваивание.(a = a + 1; равно а += 1;) )
